@@ -2,4 +2,4 @@
 
 testSet "List"
 
-expectToBeEqual "cda list" "list set"
+expectToBeEqual ". $_cdaAliasLocation list" "list set shortlist"

@@ -3,9 +3,6 @@
 echo Start bootstrapping test process
 
 _cdaAliasLocation=$1
-function cda() {
-  . $_cdaAliasLocation
-}
 
 function testSet() {
   echo -e "\n\nStart test set $1\n"
