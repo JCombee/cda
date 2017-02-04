@@ -1,18 +1,28 @@
 #!/bin/bash
 
-FILE_DIR=$(dirname "$0")
-alias cda=". ${FILE_DIR}/../src/main.sh"
+echo Start bootstrapping test process
+
+_cdaAliasLocation=$1
+function cda() {
+  . $_cdaAliasLocation
+}
 
 function testSet() {
   echo -e "\n\nStart test set $1\n"
 }
 
-# expectToBeEqual NAME VALUE_1 VALUE_2
-function expectToBeEqual() {
-  if test "${2}" != "${3}"; then
-    echo -e "  X expected \"${1}\" to be \"${3}\" but received \"${2}\"\n"
+# expectToBeEqual COMMAND EXPECTED
+function expectToBeEqual()  {
+  _cdaCommand=$1
+  _cdaCommandReturns="`$1`"
+  _cdaExpected="$2"
+
+  if [ "{$_cdaCommandReturns}" != "{${_cdaExpected}}" ]; then
+    echo -e "  X expected \"${_cdaCommand}\" to be \"${_cdaExpected}\" but received \"${_cdaCommandReturns}\"\n"
     return 1
   fi
   echo -e "  √ $1"
   return
 }
+
+echo End bootstrapping test process

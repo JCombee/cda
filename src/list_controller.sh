@@ -1,5 +1,4 @@
-_cdaCommands+=("list")
-_cdaCommandController["list"]=_cdaListController
+_cdaController list _cdaListController
 
 function _cdaListController() {
   echo ${_cdaCommands[@]}

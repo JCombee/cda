@@ -1,7 +1,9 @@
 #!/bin/bash
 
-FILE_DIR=$(dirname "$0")
+echo Start bootstrapping build process
 
-_cdaFiles+=($FILE_DIR/src/init.sh)
-_cdaFiles+=($FILE_DIR/src/*_controller.sh)
-_cdaFiles+=($FILE_DIR/src/router.sh)
+_cdaFiles+=("`pwd`/src/init.sh")
+_cdaFiles+=("`pwd`/src/*_controller.sh")
+_cdaFiles+=("`pwd`/src/router.sh")
+
+echo End bootstrapping build process
