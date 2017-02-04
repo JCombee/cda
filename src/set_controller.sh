@@ -10,6 +10,7 @@ function _cdaSetController() {
   do
     if [ $_cdaAlias == $_cdaNewAlias ]; then
       _cdaAliases[$_counter]=$_cdaNewAlias
+      _cdaAliasPaths[$_counter]=$_cdaNewPath
       _cont=false
     fi
     _counter=`expr $_counter + 1`
@@ -17,6 +18,7 @@ function _cdaSetController() {
 
   if $_cont; then
     _cdaAliases+=($_cdaNewAlias)
+    _cdaAliasPaths+=($_cdaNewPath)
   fi
 
   echo "Alias \"$_cdaNewAlias\" is set to \"$_cdaNewPath\""
