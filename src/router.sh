@@ -11,7 +11,6 @@ _cdaCounter=0
 for alias in "${_cdaAliases[@]}"
 do
   if [ "${alias}" == "${1}" ]; then
-    echo "${_cdaAliasPaths[${_cdaCounter}]}"
     cd "${_cdaAliasPaths[${_cdaCounter}]}"
   fi
   _cdaCounter=`expr $_cdaCounter + 1`

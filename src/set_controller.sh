@@ -21,5 +21,7 @@ function _cdaSetController() {
     _cdaAliasPaths+=($_cdaNewPath)
   fi
 
+  _cdaSaveAliases
+
   echo "Alias \"$_cdaNewAlias\" is set to \"$_cdaNewPath\""
 }
