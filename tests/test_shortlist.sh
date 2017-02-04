@@ -1,5 +1,7 @@
 #!/bin/bash
 
+. ./bootstrap.sh $1
+
 testSet "Shortlist"
 
 expectToBeEqual ". $_cdaAliasLocation shortlist" "list set shortlist"
