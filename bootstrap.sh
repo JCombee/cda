@@ -1,9 +1,3 @@
 #!/bin/bash
 
-echo Start bootstrapping build process
-
-_cdaFiles+=("`pwd`/src/init.sh")
-_cdaFiles+=("`pwd`/src/*_controller.sh")
-_cdaFiles+=("`pwd`/src/router.sh")
-
-echo End bootstrapping build process
+_cdaFiles=(`find "$_cdaSourcePathDir/src/init.sh" "$_cdaSourcePathDir"/src/*_controller.sh "$_cdaSourcePathDir/src/router.sh"`)
