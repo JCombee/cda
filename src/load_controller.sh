@@ -1,12 +1,12 @@
 _cdaController load _cdaLoadController _cdaLoadAutocomplete
 
 function _cdaLoadController() {
-  _cdaSourcePath=$0
   _cdaAliases=()
   _cdaAliasPaths=()
-  . ~/.cda_list 2>&1
+  touch ~/.cda_list
+  . ~/.cda_list
 
-  alias cda=". /c/bin/cda/cda.sh"
+  alias cda=". $_cdaSourcePath"
   complete -o dirnames -F _cdaAutocomplete cda
 }
 
