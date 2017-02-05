@@ -1,4 +1,4 @@
-_cdaController set _cdaSetController
+_cdaController set _cdaSetController _cdaSetAutocomplete
 
 function _cdaSetController() {
   _cdaNewAlias=$2
@@ -24,4 +24,9 @@ function _cdaSetController() {
   _cdaSaveAliases
 
   echo "Alias \"$_cdaNewAlias\" is set to \"$_cdaNewPath\""
+}
+
+function _cdaSetAutocomplete() {
+  COMPREPLY=("a")
+  return 0
 }

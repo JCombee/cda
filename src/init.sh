@@ -6,6 +6,7 @@ _cdaCommandControllers=()
 function _cdaController() {
   _cdaCommands+=($1)
   _cdaCommandControllers+=($2)
+  _cdaCommandAutocomplete+=($3)
 }
 
 function _cdaSaveAliases() {
