@@ -11,6 +11,5 @@ function _cdaLoadController() {
 }
 
 function _cdaLoadAutocomplete() {
-  COMPREPLY=("a")
   return 0
 }

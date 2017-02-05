@@ -5,6 +5,5 @@ function _cdaShortlistController() {
 }
 
 function _cdaShortlistAutocomplete() {
-  COMPREPLY=("a")
   return 0
 }

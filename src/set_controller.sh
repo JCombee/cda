@@ -27,6 +27,5 @@ function _cdaSetController() {
 }
 
 function _cdaSetAutocomplete() {
-  COMPREPLY=("a")
   return 0
 }
