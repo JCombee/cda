@@ -25,10 +25,10 @@ Replace "/path/to/cda.sh" with the correct path and you should be good to go.
 
 # Settings
 
-## CDA_LOCATION
+## CDA_LOCATION (not yet implemented)
 
 When you use cda it will automaticly add a file to store in all aliases.
-Default it will be put in the ~/.cda_list location but it can be changed by setting the environment variable "CDA_LOCATION" (not yet implemented) to the filename and location you prefer.
+Default it will be put in the ~/.cda_list location but it can be changed by setting the environment variable "CDA_LOCATION" to the filename and location you prefer.
 
 # Commands
 
