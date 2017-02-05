@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo Start bootstrapping test process
-
 _cdaAliasLocation=$1
 
 function testSet() {
@@ -21,5 +19,3 @@ function expectToBeEqual()  {
   echo -e "  √ $1"
   return
 }
-
-echo End bootstrapping test process
