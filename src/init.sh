@@ -2,6 +2,7 @@
 
 _cdaCommands=()
 _cdaCommandControllers=()
+_cdaCommandAutocomplete=()
 
 function _cdaController() {
   _cdaCommands+=($1)
