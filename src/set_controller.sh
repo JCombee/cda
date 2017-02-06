@@ -2,7 +2,7 @@ _cdaController set _cdaSetController _cdaSetAutocomplete
 
 function _cdaSetController() {
   _cdaNewAlias=$2
-  _cdaNewPath=$3
+  _cdaNewPath=`realpath $3`
   _counter=0
   _cont=true
 
