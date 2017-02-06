@@ -1,6 +1,6 @@
 #!/bin/bash
 
-_cdaAliasLocation=$1
+_cdaAliasLocation=`realpath $1`
 
 function testSet() {
   echo -e "\n\nStart test set $1\n"

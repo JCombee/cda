@@ -1,8 +1,8 @@
 #!/bin/bash
 
 testSet "Alias"
-
-testDir="`dirname \"${BASH_SOURCE[0]}\"`/test-dir"
+CurDir="`realpath \`dirname \"${BASH_SOURCE[0]}\"\``"
+testDir="$CurDir/test-dir"
 testDirAbs="`realpath \"${testDir}\"`"
 mkdir $testDir
 
@@ -10,6 +10,13 @@ mkdir $testDir
 . $_cdaAliasLocation test > /dev/null
 
 expectToBeEqual "pwd" "${testDirAbs}"
+
+cd `dirname "${testDirAbs}"`
+
+. $_cdaAliasLocation unset test > /dev/null
+. $_cdaAliasLocation test > /dev/null
+
+expectToBeEqual "pwd" "${CurDir}"
 
 cd `dirname "${testDirAbs}"`
 

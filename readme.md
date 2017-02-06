@@ -56,7 +56,7 @@ cda list
 cda set ALIAS LOCATION
 ```
 
-## Unset (not yet implemented)
+## Unset
 
 ```
 cda unset ALIAS

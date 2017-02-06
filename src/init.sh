@@ -13,11 +13,15 @@ function _cdaController() {
 function _cdaSaveAliases() {
   rm ~/.cda_list 2>&1
   touch ~/.cda_list
-  _cdaCounter=0
+  _cdaNewIndecCounter=0
+  _cdaOldIndecCounter=0
   for alias in "${_cdaAliases[@]}"
   do
-    echo "_cdaAliases[$_cdaCounter]=${_cdaAliases[$_cdaCounter]}" >> ~/.cda_list
-    echo "_cdaAliasPaths[$_cdaCounter]=${_cdaAliasPaths[$_cdaCounter]}" >> ~/.cda_list
-    _cdaCounter=`expr $_cdaCounter + 1`
+    if [ "${_cdaAliases[$_cdaOldIndecCounter]}" != "" ]; then
+      echo "_cdaAliases[$_cdaNewIndecCounter]=${_cdaAliases[$_cdaOldIndecCounter]}" >> ~/.cda_list
+      echo "_cdaAliasPaths[$_cdaNewIndecCounter]=${_cdaAliasPaths[$_cdaOldIndecCounter]}" >> ~/.cda_list
+      _cdaNewIndecCounter=`expr $_cdaNewIndecCounter + 1`
+    fi
+    _cdaOldIndecCounter=`expr $_cdaOldIndecCounter + 1`
   done
 }
